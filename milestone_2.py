@@ -7,10 +7,10 @@ def random_choice():
 random_choice()      
 print(word)
 
-choice = input('Enter your letter choice: ')
+guess = input('Enter your letter choice: ')
 
 def letter_choice():
-    if len(choice) == 1 and choice.isalpha():
+    if len(guess) == 1 and guess.isalpha():
         print("Good guess!")
     else:
         print("Oops! That is not a valid input.")
