@@ -10,8 +10,8 @@ print(word)
 choice = input('Enter your letter choice: ')
 
 def letter_choice():
-    if len(choice) == 1 and choice is str:
-        print("Good Guess")
+    if len(choice) == 1 and choice.isalpha():
+        print("Good guess!")
     else:
-        print("Oops! This is not a valid input")
+        print("Oops! That is not a valid input.")
 letter_choice()
