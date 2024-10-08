@@ -7,7 +7,7 @@ class word_randomization:
     print(word)
 word_randomization()
 
-guess = input('Enter your letter choice: ')
+guess = input('Enter your letter guess: ')
 
 def guess_input_check():
     if len(guess) == 1 and guess.isalpha():
