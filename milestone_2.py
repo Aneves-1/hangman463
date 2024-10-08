@@ -1,11 +1,11 @@
 import random
-word_list=["banana", "apple", "strawberry", "pear", "orange"]
-
-def choose_random_word():
+class word_randomization:
+    
+    word_list=["banana", "apple", "strawberry", "pear", "orange"]
     global word
     word = random.choice(word_list)
-choose_random_word()      
-print(word)
+    print(word)
+word_randomization()
 
 guess = input('Enter your letter choice: ')
 
