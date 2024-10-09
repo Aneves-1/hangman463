@@ -2,7 +2,7 @@ import random
 
 class Hangman:
     '''
-    A Hangman Game that asks the user for a letter and checks if it is in the word.
+    A Hangman Game that asks the user to guess a letter and checks if it is in the word.
     It starts with a default number of lives and a random word from the word_list.
 
     
@@ -25,15 +25,15 @@ class Hangman:
         The number of UNIQUE letters in the word that have not been guessed yet
     num_lives: int
         The number of lives the player has
-    list_letters: list
+    list_of_guesses: list
         A list of the letters that have already been tried
 
     Methods:
     -------
-    check_letter(letter)
-        Checks if the letter is in the word.
-    ask_letter()
-        Asks the user for a letter.
+    check_guess(guess)
+        Checks if the guessed letter is in the word.
+    ask_for input()
+        Asks the user to guess a letter.
     '''
     def __init__(self, word_list, num_lives = 5):
         self.word = random.choice(word_list)
@@ -43,7 +43,7 @@ class Hangman:
         self.list_of_guesses = []
     def check_guess(self, guess):
         '''
-        Checks if the letter is in the word.
+        Checks if the guessed letter is in the word.
         If it is, it replaces the '_' in the word_guessed list with the letter.
         If it is not, it reduces the number of lives by 1.
 
@@ -70,19 +70,21 @@ class Hangman:
                     count += 1
                 for i in guess_indices:
                     self.word_guessed[i] = guess
-                self.num_letters -= 1            
+                self.num_letters -= 1
+                          
         else:
             self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {self.num_lives} lives left.")
         self.list_of_guesses.append(guess)
-        print(f"{self.word_guessed}")           
+        print(f"{self.word_guessed}")
+                 
     def ask_for_input(self):
         '''
-        Asks the user for a letter and checks two things:
+        Asks the user for a letter guess and checks two things:
         1. If the character is a single character
         2. If the letter has already been tried
-        If it passes both checks, it calls the check_letter method.
+        If it passes both checks, it calls the check_guess method.
         '''
         while True:
             guess = input("Enter your letter guess: ")            
